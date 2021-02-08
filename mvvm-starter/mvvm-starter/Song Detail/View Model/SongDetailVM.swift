@@ -8,7 +8,7 @@
 import Foundation
 
 class SongDetailVM {
-      
+    
     //TODO 4: Make these properties private to ensure only the VM can manupulate them
     private (set) var songName, songImageName, artist, releaseDate: String!
     private (set) var isFavorite: Bool!
@@ -29,7 +29,7 @@ class SongDetailVM {
             self.isFavorite = !self.isFavorite
         }
     }
-        
+    
     
     private func songData() -> [String: Any] {
         //TODO 2.1: Return a random song using the Data Source

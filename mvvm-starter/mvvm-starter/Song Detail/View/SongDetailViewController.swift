@@ -8,7 +8,7 @@
 import UIKit
 
 class SongDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var artistNameLabel: UILabel!
     @IBOutlet weak var songImage: UIImageView!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -16,7 +16,7 @@ class SongDetailViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     
     private var viewModel = SongDetailVM()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //TODO 1: Tell the VM that the view has loaded
@@ -31,7 +31,7 @@ class SongDetailViewController: UIViewController {
         self.songImage.image = UIImage(named: viewModel.songImageName)
         self.releaseDateLabel.text = viewModel.releaseDate
         self.songNameLabel.text = viewModel.songName
-
+        
         //TODO 1.2: Set the button's text
         setButtonText()
         
