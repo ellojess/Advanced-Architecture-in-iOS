@@ -8,8 +8,20 @@
 import Foundation
 import UIKit
 
-class SettingsCoordinator {
+class SettingsCoordinator: Coordinator {
     
+    var navigationController: NavigationController
+    private var rootVC: SettingsVC?
 
+    init(navigationController: NavigationController) {
+        self.navigationController = navigationController
+        self.rootVC = navigationController.viewControllers.first as? SettingsVC
+        start()
+    }
+
+    func start() {
+        rootVC!.coordinator = self
+    }
+    
     
 }

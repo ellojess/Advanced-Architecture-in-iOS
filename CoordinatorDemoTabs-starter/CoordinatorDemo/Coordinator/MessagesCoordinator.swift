@@ -9,5 +9,16 @@ import Foundation
 import UIKit
 
 class MessagesCoordinator {
-  
+    var navigationController: NavigationController
+    private var rootVC: MessagesVC?
+
+    init(navigationController: NavigationController) {
+        self.navigationController = navigationController
+        self.rootVC = navigationController.viewControllers.first as? MessagesVC
+        start()
+    }
+
+    func start() {
+        rootVC!.coordinator = self
+    }
 }

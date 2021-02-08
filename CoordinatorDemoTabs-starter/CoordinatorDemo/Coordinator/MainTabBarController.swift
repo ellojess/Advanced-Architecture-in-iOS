@@ -10,6 +10,8 @@ import UIKit
 class MainTabBarController: UITabBarController {
 
     var home : HomeCoordinator!
+    var setting: SettingsCoordinator!
+    var message: MessagesCoordinator!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,9 +20,16 @@ class MainTabBarController: UITabBarController {
         homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 0)
         home = HomeCoordinator(navigationController: NavigationController(rootViewController: homeVC))
         
-        viewControllers = [home.navigationController]
+        let settingsVC = SettingsVC()
+        settingsVC.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(systemName: "house"), tag: 1)
+        setting = SettingsCoordinator(navigationController: NavigationController(rootViewController: settingsVC))
+        
+        let messageVC = MessagesVC()
+        messageVC.tabBarItem = UITabBarItem(title: "Message", image: UIImage(systemName: "house"), tag: 2)
+        message = MessagesCoordinator(navigationController: NavigationController(rootViewController: messageVC))
+        
+        viewControllers = [home.navigationController, setting.navigationController, message.navigationController]
     }
     
-
 
 }

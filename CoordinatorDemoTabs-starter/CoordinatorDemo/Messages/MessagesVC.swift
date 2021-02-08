@@ -9,6 +9,8 @@ import UIKit
 
 class MessagesVC: UIViewController {
     
+    var coordinator: MessagesCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

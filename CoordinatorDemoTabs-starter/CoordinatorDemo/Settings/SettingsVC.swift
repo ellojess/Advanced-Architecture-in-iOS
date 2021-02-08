@@ -8,6 +8,8 @@
 import UIKit
 
 class SettingsVC: UIViewController {
+    
+    var coordinator: SettingsCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
