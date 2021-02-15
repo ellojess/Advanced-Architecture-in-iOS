@@ -76,4 +76,4 @@ filteredCities.reduce("") { result, city in
 }
 
 //print(filteredCities.map{$0.name})
-//print(filteredCities.map{$0.population})
+print(filteredCities.map{$0.population})
