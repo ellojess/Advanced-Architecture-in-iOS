@@ -19,8 +19,21 @@ print(result) // [5, 42, 100]
 /*:
 Create a function that removes all vowels from a string. Use compactMap
 */
+func removeVowels(string: String) -> String {
+    let vowels: [Character] = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+    let result = string.compactMap({ vowels.contains($0) ? nil : String($0)}).joined()
+    return result
+}
 
+print(removeVowels(string: "HELLO WHOEVER IS lOokIng at THIs"))
 
+// alt solution
+//func removeVowels2(string: String) -> String {
+//    let chars = string.compactMap(char -> Character? in
+//        switch char {
+//        case
+//                                  })
+//}
 //: #### Exercise 2
 /*:
 Generate values from 0 to 100, with only even numbers. And
@@ -29,6 +42,8 @@ Expected result:
  
 `[2, 4, 6, 8, 12, 14, 16, 18, 22, 24, 26, 28]`
 */
-
-
+let sequence = stride(from: 02, to: 30, by: 2).compactMap{int in
+    return int % 10 == 0 ? nil  : int
+}
+print(sequence)
 //: [Next](@next)
